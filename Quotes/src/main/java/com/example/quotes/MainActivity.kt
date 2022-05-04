@@ -14,11 +14,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         quoteCall()
     }
-    fun quoteCall() {
+    private fun quoteCall() {
         val textView: TextView = findViewById(R.id.quoteQuery)
         Thread {
             val client = OkHttpClient()
-            val url = URL("https://reqres.in/api/users?page=2")
+            val url = URL("https://zenquotes.io/api/random")
             val request = Request.Builder()
                 .url(url)
                 .get()
